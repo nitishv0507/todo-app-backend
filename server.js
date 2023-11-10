@@ -1,15 +1,15 @@
 import express  from "express";
-import mongoose, { connect } from "mongoose";
+import mongoose from "mongoose";
 import todoData from "./models/todoAppModel.js";
 import cors from "cors";
 
 const app = express();
 const PORT = process.env.PORT || 4000;
+const MONGO_URI = process.env.MONGO_URI;
 
 app.use(express.json());
 app.use(cors({ origin: "*" }));
 
-const MONGO_URI = process.env.MONGO_URI;
 // First step is create the item so use post method.
 app.post("/todo", async (req, res) => {
 
