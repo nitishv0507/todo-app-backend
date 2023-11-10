@@ -4,13 +4,12 @@ import todoData from "./models/todoAppModel.js";
 import cors from "cors";
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 app.use(express.json());
-app.use(cors({ origin: "*"}));
+app.use(cors({ origin: "*" }));
 
-const MONGO_URI = 'mongodb+srv://admin:NitishVerma@cluster0.a4iqsms.mongodb.net/todoApp?retryWrites=true&w=majority';
-
+const MONGO_URI = process.env.MONGO_URI;
 // First step is create the item so use post method.
 app.post("/todo", async (req, res) => {
 
