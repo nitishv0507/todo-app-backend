@@ -7,8 +7,6 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 const MONGO_URI = process.env.MONGO_URI;
 
-console.log(process.env);
-
 app.use(express.json());
 app.use(cors({ origin: "*" }));
 
